@@ -33,6 +33,7 @@ x86/
 bld/
 [Bb]in/
 [Oo]bj/
+/SistemaInventario/obj/
 [Ll]og/
 [Ll]ogs/
 
@@ -399,3 +400,5 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+/SistemaInventario/obj/Debug/net8.0/SistemaInventario.AssemblyInfo.cs
+/SistemaInventario/obj/Debug/net8.0/SistemaInventario.AssemblyInfoInputs.cache
