@@ -25,6 +25,16 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        
+                        @* MENÚ DESPLEGABLE *@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdowndropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contenido</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="Admin" asp-controller="Store" asp-action="Index">Almancen</a></li>
+                            </ul>
+                        </li>
+                        @* FIN MENÚ DESPLEGABLE *@
+
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
