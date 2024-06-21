@@ -8,5 +8,7 @@ namespace SistemaInventario.Utilidades
 {
     public static class DS
     {
+        public const string Existosa = "Exitosa";
+        public const string Error = "Error";
     }
 }
