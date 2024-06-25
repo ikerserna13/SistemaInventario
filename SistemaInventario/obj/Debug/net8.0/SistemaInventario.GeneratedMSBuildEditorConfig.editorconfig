@@ -26,12 +26,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Proyectos\SistemaInventario\SistemaInventario
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Proyectos/SistemaInventario/SistemaInventario/Areas/Admin/Views/Store/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3RvcmVcSW5kZXguY3NodG1s
+[C:/Proyectos/SistemaInventario/SistemaInventario/Areas/Admin/Views/Bodega/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9kZWdhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Proyectos/SistemaInventario/SistemaInventario/Areas/Admin/Views/Store/Upsert.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3RvcmVcVXBzZXJ0LmNzaHRtbA==
+[C:/Proyectos/SistemaInventario/SistemaInventario/Areas/Admin/Views/Bodega/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9kZWdhXFVwc2VydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Proyectos/SistemaInventario/SistemaInventario/Areas/Admin/Views/Categoria/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Proyectos/SistemaInventario/SistemaInventario/Areas/Admin/Views/Categoria/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmlhXFVwc2VydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Proyectos/SistemaInventario/SistemaInventario/Areas/Admin/Views/_ViewImports.cshtml]

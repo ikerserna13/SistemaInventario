@@ -20,7 +20,7 @@ function loadDatatable() {
             }
         },
         "ajax": {
-            "url" : "/Admin/Store/ObtenerTodos"
+            "url" : "/Admin/Categoria/ObtenerTodos"
         },
         "columns": [
             { "data": "nombre", "width": "20%" },
@@ -41,10 +41,10 @@ function loadDatatable() {
                 "render": function (data) {
                     return `
                         <div class="text-center">
-                            <a href="/Admin/Store/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer">
+                            <a href="/Admin/Categoria/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <a class="btn btn-danger text-white" style="cursor:pointer" onclick="Delete('/Admin/Store/Delete/${data}')">
+                            <a class="btn btn-danger text-white" style="cursor:pointer" onclick="Delete('/Admin/Categoria/Delete/${data}')">
                                 <i class="bi bi-trash3-fill"></i>
                             </a>
                         </div>
@@ -57,7 +57,7 @@ function loadDatatable() {
 
 function Delete(url) {
     swal({
-        titulo: "¿Estás seguro de eliminar el Almacen?",
+        titulo: "¿Estás seguro de eliminar la Categoria?",
         text: "Este registro no se podrá recuperar",
         icon: "warning",
         buttons: true,

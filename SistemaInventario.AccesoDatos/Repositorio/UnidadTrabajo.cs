@@ -1,10 +1,5 @@
 ﻿using SistemaInventario.AccesoDatos.Data;
 using SistemaInventario.AccesoDatos.Repositorio.IRepositorio;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaInventario.AccesoDatos.Repositorio
 {
@@ -12,12 +7,15 @@ namespace SistemaInventario.AccesoDatos.Repositorio
     {
         private readonly ApplicationDbContext _db;
 
-        public IStoreRepositorio Store { get; private set; }
-        
+
+        public IBodegaRepositorio Bodega { get; private set; }
+        public ICategoriaRepositorio Categoria { get; private set; }
+
         public UnidadTrabajo(ApplicationDbContext db)
         {
             _db = db;
-            Store = new StoreRepositorio(_db);
+            Bodega = new BodegaRepositorio(_db);
+            Categoria = new CategoriaRepositorio(_db);
         }
 
         public void Dispose()

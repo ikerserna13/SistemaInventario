@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemaInventario.Modelos
 {
-    public class Store
+    public class Bodega
     {
         [Key]
         public int Id { get; set; }

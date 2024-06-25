@@ -1,7 +1,7 @@
-﻿@model SistemaInventario.Modelos.Store
+﻿@model SistemaInventario.Modelos.Categoria
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var titulo = "Crear Almacen";
+    var titulo = "Crear Categoria";
 }
 
 <form method="post">
@@ -11,7 +11,7 @@
         </div>
         @if(Model.Id != 0)
         {
-            titulo = "Actualizar Almacen";
+            titulo = "Actualizar Categoria";
             <input type="hidden" asp-for="Id" id="id"/>
         }
         <div class="col-12 border-bottom p-0">
@@ -20,14 +20,14 @@
         <div class="row mb-2 mt-2">
             <div class="form-group col-md-6">
                 <label>Nomrbe</label>
-                <input type="text" asp-for="Nombre" class="form-control" placeholder="Nombre del Almacen" id="nombre" />
+                <input type="text" asp-for="Nombre" class="form-control" placeholder="Nombre de la Categoria" id="nombre" />
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
         </div>
         <div class="row mb-2 mt-2">
             <div class="form-group col-md-6">
                 <label>Descripcion</label>
-                <input type="text" asp-for="Descripcion" class="form-control" placeholder="Nombre del Almacen" />
+                <input type="text" asp-for="Descripcion" class="form-control" placeholder="Nombre de la Categoria" />
                 <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>
         </div>
@@ -64,7 +64,7 @@
 
 
         function valirdarNombre() {
-            var url = '@Url.Content("~/")' + "Admin/Store/ValidarNombre";
+            var url = '@Url.Content("~/")' + "Admin/Categoria/ValidarNombre";
             var id = '#id';
             var nombre = '#nombre';
 
