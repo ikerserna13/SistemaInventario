@@ -20,7 +20,7 @@ namespace SistemaInventario.AccesoDatos.Repositorio
 
         public void Actualizar(Marca marca)
         {
-            var marcaBD = _db.Bodegas.FirstOrDefault(s => s.Id == marca.Id);
+            var marcaBD = _db.Marcas.FirstOrDefault(s => s.Id == marca.Id);
             if (marcaBD != null)
             {
                 marcaBD.Nombre = marca.Nombre;

@@ -6,11 +6,11 @@ using SistemaInventario.Utilidades;
 namespace SistemaInventario.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CategoriaController : Controller
+    public class BodegaController : Controller
     {
         private readonly IUnidadTrabajo _unidadTrabajo;
 
-        public CategoriaController(IUnidadTrabajo unidadTrabajo)
+        public BodegaController(IUnidadTrabajo unidadTrabajo)
         {
             _unidadTrabajo = unidadTrabajo;
         }
@@ -22,40 +22,40 @@ namespace SistemaInventario.Areas.Admin.Controllers
 
         public async Task<IActionResult> Upsert(int? id)
         {
-            Categoria categoria = new Categoria();
+            Bodega bodega = new Bodega();
             if (id == null) {
-                categoria.Estado = true;
-                return View(categoria);
+                bodega.Estado = true;
+                return View(bodega);
             }
-            categoria = await _unidadTrabajo.Categoria.Obtener(id.GetValueOrDefault());
-            if (categoria == null)
+            bodega = await _unidadTrabajo.Bodega.Obtener(id.GetValueOrDefault());
+            if (bodega == null)
             {
                 return NotFound();
             }
-            return View(categoria);
+            return View(bodega);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Upsert(Categoria categoria)
+        public async Task<IActionResult> Upsert(Bodega bodega)
         {
             if (ModelState.IsValid)
             {
-                if (categoria.Id == 0)
+                if (bodega.Id == 0)
                 {
-                    await _unidadTrabajo.Categoria.Agregar(categoria);
-                    TempData[DS.Existosa] = "Categoria creada existosamente";
+                    await _unidadTrabajo.Bodega.Agregar(bodega);
+                    TempData[DS.Existosa] = "Almacen creado existosamente";
                 }
                 else
                 {
-                    _unidadTrabajo.Categoria.Actualizar(categoria);
-                    TempData[DS.Existosa] = "Categoria actualizada existosamente";
+                    _unidadTrabajo.Bodega.Actualizar(bodega);
+                    TempData[DS.Existosa] = "Almacen actualizado existosamente";
                 }
                 await _unidadTrabajo.Guardar();
                 return RedirectToAction(nameof(Index));
             }
-            TempData[DS.Error] = "Error al guardar Categoria";
-            return View(categoria);
+            TempData[DS.Error] = "Error al guardar Almacen";
+            return View(bodega);
         }
 
         
@@ -64,28 +64,28 @@ namespace SistemaInventario.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> ObtenerTodos()
         {
-            var todos = await _unidadTrabajo.Categoria.ObtenerTodos();
+            var todos = await _unidadTrabajo.Bodega.ObtenerTodos();
             return Json(new { data = todos });
         }
 
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            var storeDb = await _unidadTrabajo.Categoria.Obtener(id);
+            var storeDb = await _unidadTrabajo.Bodega.Obtener(id);
             if (storeDb == null)
             {
-                return Json(new { success = false, message = "Error al borrar Categoria" });
+                return Json(new { success = false, message = "Error al borrar Almacen" });
             }
-            _unidadTrabajo.Categoria.Eliminar(storeDb);
+            _unidadTrabajo.Bodega.Eliminar(storeDb);
             await _unidadTrabajo.Guardar();
-            return Json(new { success = true, message = "Categoria borrada correctamente" });
+            return Json(new { success = true, message = "Almacen borrado correctamente" });
         }
 
         [ActionName("ValidarNombre")]
         public async Task<IActionResult> ValidarNombre(string nombre, int id=0)
         {
             bool valor = false;
-            var lista = await _unidadTrabajo.Categoria.ObtenerTodos();
+            var lista = await _unidadTrabajo.Bodega.ObtenerTodos();
             if (id == 0)
             {
                 valor = lista.Any(b => b.Nombre.ToLower().Trim() == nombre.ToLower().Trim());
