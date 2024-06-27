@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SistemaInventario.Modelos.Producto>
+﻿@model SistemaInventario.Modelos.Especificaiones.PagedList<SistemaInventario.Modelos.Producto>
 @using SistemaInventario.Utilidades
 @{
     ViewData["Title"] = "Home Page";
@@ -15,12 +15,16 @@
 
 <section>
     <div class="container my-2">
-        <div class="col-lg-6 col-md-6 col-sm-6 d-flex">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar" aria-describedby="button-addon2"/>
-                <button class="btn btn-outline-primary"><i class="bi bi-search"></i></button>
+        
+        <form asp-action="Index" method="get">
+            <div class="col-lg-6 col-md-6 col-sm-6 d-flex">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar" aria-describedby="button-addon2" 
+                    name="busqueda" value="@ViewData["BusquedaActual"]"/>
+                    <button type="submit" class="btn btn-outline-primary"><i class="bi bi-search"></i></button>
+                </div>
             </div>
-        </div>
+        </form>
 
         <div class="row">
             @foreach (var producto in Model)
@@ -39,6 +43,12 @@
                 </div>   
             }
         </div>
+
+        <a asp-action="Index" asp-route-pageNumber="@(1)" class="btn btn-outline-primary" asp-route-busquedaActual="@ViewData["BusquedaActual"]"><i class="bi bi-caret-left"></i></a>
+        <a asp-action="Index" asp-route-pageNumber="@((int)ViewData["PageNumber"]-1)" asp-route-busquedaActual="@ViewData["BusquedaActual"]" class="btn btn-outline-primary @ViewData["Anterior"]">Anterior</a>
+        <span>Página @ViewData["PageNumber"] de @ViewData["TotalPaginas"]</span>
+        <a asp-action="Index" asp-route-pageNumber="@((int)ViewData["PageNumber"]+1)" asp-route-busquedaActual="@ViewData["BusquedaActual"]" class="btn btn-outline-primary @ViewData["Siguiente"]">Siguiente</i></a>
+        <a asp-action="Index" asp-route-pageNumber="@ViewData["TotalPaginas"]" asp-route-busquedaActual="@ViewData["BusquedaActual"]" class="btn btn-outline-primary"><i class="bi bi-caret-right"></i></a>
 
     </div>
 </section>
