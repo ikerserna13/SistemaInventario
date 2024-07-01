@@ -45,6 +45,13 @@
                         </li>
                         @* FIN MENÚ DESPLEGABLE *@
 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdowndropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Usuario</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="Admin" asp-controller="Usuario" asp-action="Index">Usuarios</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

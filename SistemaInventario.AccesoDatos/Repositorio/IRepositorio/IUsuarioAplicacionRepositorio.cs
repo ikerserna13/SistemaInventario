@@ -1,6 +1,8 @@
-﻿namespace SistemaInventario.AccesoDatos.Repositorio.IRepositorio
+﻿using SistemaInventario.Modelos;
+
+namespace SistemaInventario.AccesoDatos.Repositorio.IRepositorio
 {
-    public interface IUsuarioAplicacionRepositorio
+    public interface IUsuarioAplicacionRepositorio : IRepositorio<UsuarioAplicacion>
     {
     }
 }
