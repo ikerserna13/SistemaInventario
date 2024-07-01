@@ -4746,6 +4746,7 @@
           "Microsoft.EntityFrameworkCore": "8.0.6",
           "Microsoft.EntityFrameworkCore.Relational": "8.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6",
+          "Microsoft.Extensions.Identity.Stores": "8.0.6",
           "SistemaInventario.Modelos": "1.0.0",
           "SistemaInventario.Utilidades": "1.0.0"
         },
@@ -4763,6 +4764,7 @@
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "8.0.6",
           "Microsoft.AspNetCore.Identity.UI": "8.0.6",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
+          "Microsoft.Extensions.Identity.Stores": "8.0.6",
           "SistemaInventario.Utilidades": "1.0.0"
         },
         "compile": {
@@ -4778,7 +4780,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "8.0.6",
           "Microsoft.AspNetCore.Identity.UI": "8.0.6",
-          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0"
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
+          "Microsoft.Extensions.Identity.Stores": "8.0.6"
         },
         "compile": {
           "bin/placeholder/SistemaInventario.Utilidades.dll": {}
@@ -13799,6 +13802,7 @@
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.6",
+      "Microsoft.Extensions.Identity.Stores >= 8.0.6",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.2",
       "SistemaInventario.AccesoDatos >= 1.0.0",
       "SistemaInventario.Modelos >= 1.0.0",
@@ -13884,6 +13888,10 @@
             "version": "[8.0.6, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
+            "target": "Package",
+            "version": "[8.0.6, )"
+          },
+          "Microsoft.Extensions.Identity.Stores": {
             "target": "Package",
             "version": "[8.0.6, )"
           },
